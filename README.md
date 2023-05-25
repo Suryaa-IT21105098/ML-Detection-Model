@@ -1,9 +1,8 @@
 # Malware-Detection-ML-Model
-### Demo: [Youtube]()
-### Try at: [Streamlit](https://kunal-attri-malware-detection-ml-model-streamlit-app-l9q9ae.streamlitapp.com/)
+### Try at: [Streamlit](https://suryaa-it21105098-ml-detection-model-streamlit-app-jcszi6.streamlit.app/)
 - This is a [Python](https://www.python.org/) program to train Malware Detection ML Model and check if a given file is a probable MALWARE or not!
 - It uses [Random Forest](https://en.wikipedia.org/wiki/Random_forest) algorithm for training the ML model.
-- I have implemented it in 2 ways:
+- It has been implemented in 2 ways:
   - CLI app
   - Streamlit app
 
@@ -36,7 +35,7 @@ NOTE: Don't run any files inside malwares folder, as these are actual malwares t
 1. **Download this GitHub repository**
 	- Either Clone the repository
 		```
-		git clone https://github.com/Kunal-Attri/Malware-Detection-ML-Model.git
+		git clone https://github.com/Suryaa-IT21105098/ML-Detection-Model.git
 		```
 	- Or download and extract the zip archive of the repository.
 
@@ -55,7 +54,7 @@ NOTE: Don't run any files inside malwares folder, as these are actual malwares t
    - *Expected Interface*
    <br><img src="images/cli.png?raw=true"><br><br>
 4. **Run Streamlit app**
-   - Try on web app [*here*](https://kunal-attri-malware-detection-ml-model-streamlit-app-l9q9ae.streamlitapp.com/).
+   - Try on web app [*here*](https://suryaa-it21105098-ml-detection-model-streamlit-app-jcszi6.streamlit.app/).
    - or run locally by:
      ```
      streamlit run streamlit_app.py
