@@ -3,26 +3,70 @@ import streamlit as st
 
 from file_checker import checkFile
 
-primaryColor="#702963"
-backgroundColor="#D70040"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#F88379"
-font="sans serif"
+# Set custom styles
+st.set_page_config(
+    page_title="Malware Detection",
+    page_icon="🔍",
+    layout="centered",
+    initial_sidebar_state="auto"
+)
+
+# Define custom CSS styles
+st.markdown(
+    f"""
+    <style>
+        .reportview-container .main .block-container{{
+            max-width: 800px;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }}
+        .streamlit-file_uploader{{
+            padding: 1rem;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+        }}
+        .streamlit-button.primary-button{{
+            background-color: #702963;
+            border-color: #702963;
+            color: white;
+        }}
+        .streamlit-button.primary-button:hover{{
+            background-color: #874f82;
+            border-color: #874f82;
+        }}
+        .streamlit-button.warning-button{{
+            background-color: #D70040;
+            border-color: #D70040;
+            color: white;
+        }}
+        .streamlit-button.warning-button:hover{{
+            background-color: #f74767;
+            border-color: #f74767;
+        }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title("Malware Detection using Random Forest Algorithm")
 
-st.markdown("""This is a python program for detecting whether a given file is a probable malware or not!""")
+st.markdown("""
+This is a Python program for detecting whether a given file is a probable malware or not!
+""")
 
-st.subheader("Try yourself:-")
+st.subheader("Try it yourself:")
 
-file = st.file_uploader("Upload a file to check for malwares:", accept_multiple_files=True)
-if len(file):
+file = st.file_uploader("Upload a file to check for malware:", accept_multiple_files=True)
+
+if file:
     with st.spinner("Checking..."):
-        for i in file:
-            open('malwares/tempFile', 'wb').write(i.getvalue())
-            legitimate = checkFile("malwares/tempFile")
-            os.remove("malwares/tempFile")
+        for uploaded_file in file:
+            temp_file_path = "malwares/tempFile"
+            with open(temp_file_path, "wb") as temp_file:
+                temp_file.write(uploaded_file.getvalue())
+            legitimate = checkFile(temp_file_path)
+            os.remove(temp_file_path)
             if legitimate:
-                st.write(f"File {i.name} seems *LEGITIMATE*!")
+                st.success(f"File {uploaded_file.name} seems *LEGITIMATE*!")
             else:
-                st.markdown(f"File {i.name} is probably a **MALWARE**!!!")
+                st.error(f"File {uploaded_file.name} is probably a **MALWARE**!")
