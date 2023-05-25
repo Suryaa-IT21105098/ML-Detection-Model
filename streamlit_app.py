@@ -1,7 +1,5 @@
 import os
 import streamlit as st
-import plotly.figure_factory as ff
-import numpy as np
 
 from file_checker import checkFile
 CURRENT_THEME = "blue"
