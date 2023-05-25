@@ -26,7 +26,7 @@ st.markdown(
     }
     .stButton.primary-button {
         background-color: #702963;
-        color: white;
+        color: red;
     }
     .stButton.primary-button:hover {
         background-color: #874f82;
