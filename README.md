@@ -50,9 +50,7 @@ NOTE: Don't run any files inside malwares folder, as these are actual malwares t
    - Get a file to check for probable malware, and run:
      ```
      python3 main.py [FILENAME]
-     ```
-   - *Expected Interface*
-   <br><img src="images/cli.png?raw=true"><br><br>
+     <br><br>
 4. **Run Streamlit app**
    - Try on web app [*here*](https://suryaa-it21105098-ml-detection-model-streamlit-app-jcszi6.streamlit.app/).
    - or run locally by:
