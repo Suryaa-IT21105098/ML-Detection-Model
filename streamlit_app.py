@@ -10,38 +10,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Set custom styles using st.markdown
-st.markdown(
-    """
-    <style>
-    .stApp {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-    .stFileUploader {
-        padding: 2rem;
-        border: 2px dashed #702963;
-        border-radius: 5px;
-        background-color: #F0F2F6;
-    }
-    .stButton.primary-button {
-        background-color: #702963;
-        color: red;
-    }
-    .stButton.primary-button:hover {
-        background-color: #874f82;
-    }
-    .stSuccess {
-        color: #702963 !important;
-    }
-    .stError {
-        color: #D70040 !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Set app title and description
 st.title("Malware Detection using Random Forest Algorithm")
 st.markdown("""
