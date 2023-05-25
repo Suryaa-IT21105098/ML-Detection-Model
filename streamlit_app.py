@@ -2,8 +2,13 @@ import os
 import streamlit as st
 
 from file_checker import checkFile
-CURRENT_THEME = "blue"
-IS_DARK_THEME = True
+
+primaryColor="#702963"
+backgroundColor="#D70040"
+secondaryBackgroundColor="#F0F2F6"
+textColor="#F88379"
+font="sans serif"
+
 st.title("Malware Detection using Random Forest Algorithm")
 
 st.markdown("""This is a python program for detecting whether a given file is a probable malware or not!""")
