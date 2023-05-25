@@ -1,8 +1,11 @@
 import os
 import streamlit as st
+import plotly.figure_factory as ff
+import numpy as np
 
 from file_checker import checkFile
-
+CURRENT_THEME = "blue"
+IS_DARK_THEME = True
 st.title("Malware Detection using Random Forest Algorithm")
 
 st.markdown("""This is a python program for detecting whether a given file is a probable malware or not!""")
