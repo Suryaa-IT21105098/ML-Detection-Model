@@ -3,21 +3,33 @@ import streamlit as st
 
 from file_checker import checkFile
 
-# Set custom styles
+# Set custom page configuration
+st.set_page_config(
+    page_title="Malware Detection",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+# Set custom styles using st.markdown
 st.markdown(
     """
     <style>
     .stApp {
-        max-width: 800px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .stFileUploader {
         padding: 2rem;
+        border: 2px dashed #702963;
+        border-radius: 5px;
+        background-color: #F0F2F6;
     }
-    .stFileUploader .content.dropzone,
-    .stButton button {
-        background-color: #702963 !important;
-        color: white !important;
+    .stButton.primary-button {
+        background-color: #702963;
+        color: white;
     }
-    .stButton button:hover {
-        background-color: #874f82 !important;
+    .stButton.primary-button:hover {
+        background-color: #874f82;
     }
     .stSuccess {
         color: #702963 !important;
